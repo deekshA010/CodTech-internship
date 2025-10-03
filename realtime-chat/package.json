@@ -1,0 +1,14 @@
+{
+  "name": "realtime-chat",
+  "version": "1.0.0",
+  "description": "Standalone real-time chat app (React + WebSockets)",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  }
+}

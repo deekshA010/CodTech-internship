@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Developer portfolio showcasing projects, skills, and contact information." />
+  <title>Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Homepage">Dev<span>Portfolio</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn btn-primary" href="#contact">Hire Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Hello, I'm</p>
+        <h1 id="hero-title">DEEKSHA PANDIT</h1>
+        <p class="subtitle">ECE undergrad at LNCT Bhopal and Web Developer. Built an e‑commerce site and a disaster preparedness site with an AI chatbot.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-outline" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="gradient-orb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="container">
+      <h2 id="about-title">About Me</h2>
+      <p>
+        I'm an Electronics and Communication Engineering student at LNCT College, Bhopal, and a web developer
+        passionate about building responsive, accessible, and user-friendly web applications. I enjoy crafting clean UIs,
+        performant experiences, and maintainable code.
+      </p>
+      <ul class="about-list">
+        <li>Pursuing B.Tech (ECE) at LNCT College, Bhopal, currently in 3rd year</li>
+        <li>12th: St. Jude Christian Mission School, Shahdol</li>
+        <li>10th: DAV Burhar Public School, Shahdol</li>
+        <li>Internship: Web Developer at Cognify</li>
+        <li>Participant: Smart India Hackathon</li>
+      </ul>
+      <div class="about-cards">
+        <article class="card">
+          <h3>What I Do</h3>
+          <p>Design and develop responsive web apps using modern frameworks and best practices.</p>
+        </article>
+        <article class="card">
+          <h3>How I Work</h3>
+          <p>Collaboratively, with attention to detail, strong communication, and iterative delivery.</p>
+        </article>
+        <article class="card">
+          <h3>What I Value</h3>
+          <p>Clean code, accessibility, performance, documentation, and developer experience.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section" aria-labelledby="projects-title">
+    <div class="container">
+      <h2 id="projects-title">Projects</h2>
+      <div class="projects-grid">
+        <!-- Project Card 1 -->
+        <article class="project-card">
+          <img src="assets/placeholder-1.svg" alt="E-commerce project screenshot" loading="lazy" />
+          <div class="project-body">
+            <h3>E‑commerce Shopping Website</h3>
+            <p>A responsive online shopping website with product listings and an intuitive user experience.</p>
+            <div class="tag-row">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-sm" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="btn btn-sm btn-outline" href="#" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project Card 2 -->
+        <article class="project-card">
+          <img src="assets/placeholder-2.svg" alt="Disaster preparedness project screenshot" loading="lazy" />
+          <div class="project-body">
+            <h3>Disaster Preparedness Website with AI Chatbot</h3>
+            <p>A disaster readiness portal featuring guides and an AI chatbot to answer user queries.</p>
+            <div class="tag-row">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">AI</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-sm" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="btn btn-sm btn-outline" href="#" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project Card 3 -->
+        <article class="project-card">
+          <img src="assets/placeholder-3.svg" alt="Project 3 screenshot" loading="lazy" />
+          <div class="project-body">
+            <h3>API Dashboard</h3>
+            <p>Analytics dashboard with charts, filters, and responsive layouts.</p>
+            <div class="tag-row">
+              <span class="tag">React</span>
+              <span class="tag">Chart.js</span>
+              <span class="tag">REST</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-sm" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="btn btn-sm btn-outline" href="#" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project Card 4: Real-time Chat -->
+        <article class="project-card">
+          <img src="assets/placeholder-1.svg" alt="Real-time chat app screenshot" loading="lazy" />
+          <div class="project-body">
+            <h3>Real‑time Chat Application</h3>
+            <p>A responsive chat interface built with React and WebSockets with message history.</p>
+            <div class="tag-row">
+              <span class="tag">React</span>
+              <span class="tag">WebSockets</span>
+              <span class="tag">Node.js</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-sm" href="chat/index.html" rel="noopener">Open App</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section" aria-labelledby="skills-title">
+    <div class="container">
+      <h2 id="skills-title">Skills</h2>
+      <ul class="skills-list">
+        <li>HTML5</li>
+        <li>JavaScript </li>
+        <li>React </li>
+        <li>Node.js / Express</li>
+        <li>SQL / MongoDB</li>
+        <li>JAVA</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title">Contact</h2>
+      <p>Have a project in mind or want to say hello? Reach out and I'll get back to you soon.</p>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-row">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required placeholder="Your name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="you@example.com" />
+          </label>
+        </div>
+        <label class="full">
+          <span>Message</span>
+          <textarea name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> DEEKSHA PANDIT. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/deeksha-pandit-2951b5293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

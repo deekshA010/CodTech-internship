@@ -1,0 +1,14 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Node / tooling caches (if any)
+node_modules/
+.cache/
+dist/
+build/
+
+# Git / Netlify
+.netlify/

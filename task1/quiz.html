@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Quiz Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .quiz-container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .question {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    button.option {
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background: #f9f9f9;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button.option:hover {
+      background: #eef;
+    }
+    .correct {
+      background: #d4edda !important;
+      border-color: #28a745 !important;
+    }
+    .wrong {
+      background: #f8d7da !important;
+      border-color: #dc3545 !important;
+    }
+    .score {
+      font-size: 18px;
+      margin-top: 15px;
+      color: #333;
+    }
+    .next-btn {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #007bff;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>🤖 AI Quiz</h1>
+    <div id="quiz">
+      <p class="question" id="question">Loading...</p>
+      <div class="options" id="options"></div>
+      <button class="next-btn" id="next">Next Question</button>
+      <p class="score" id="score"></p>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What does AI stand for?",
+        options: ["Artificial Intelligence", "Automated Input", "Advanced Internet", "Algorithm Integration"],
+        answer: "Artificial Intelligence"
+      },
+      {
+        question: "Which of these is an AI application?",
+        options: ["Google Translate", "Microsoft Word", "Paint", "Notepad"],
+        answer: "Google Translate"
+      },
+      {
+        question: "Which programming language is most commonly used in AI?",
+        options: ["Python", "HTML", "CSS", "SQL"],
+        answer: "Python"
+      },
+      {
+        question: "Which AI technique is inspired by the human brain?",
+        options: ["Neural Networks", "Decision Trees", "Sorting Algorithms", "Blockchain"],
+        answer: "Neural Networks"
+      },
+      {
+        question: "What is a common concern about AI?",
+        options: ["Ethical issues", "Data privacy", "Job automation", "All of the above"],
+        answer: "All of the above"
+      }
+    ];
+
+    let currentIndex = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const scoreEl = document.getElementById("score");
+    const nextBtn = document.getElementById("next");
+
+    function loadQuestion() {
+      const currentQuestion = quizData[currentIndex];
+      questionEl.textContent = currentQuestion.question;
+      optionsEl.innerHTML = "";
+
+      currentQuestion.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.classList.add("option");
+        btn.textContent = option;
+        btn.onclick = () => checkAnswer(btn, currentQuestion.answer);
+        optionsEl.appendChild(btn);
+      });
+
+      nextBtn.style.display = "none";
+    }
+
+    function checkAnswer(selectedBtn, correctAnswer) {
+      const allOptions = document.querySelectorAll(".option");
+      allOptions.forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent === correctAnswer) {
+          btn.classList.add("correct");
+        }
+      });
+
+      if (selectedBtn.textContent === correctAnswer) {
+        score++;
+      } else {
+        selectedBtn.classList.add("wrong");
+      }
+
+      scoreEl.textContent = `Score: ${score}/${quizData.length}`;
+      nextBtn.style.display = "inline-block";
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex++;
+      if (currentIndex < quizData.length) {
+        loadQuestion();
+      } else {
+        questionEl.textContent = "🎉 Quiz Completed!";
+        optionsEl.innerHTML = "";
+        nextBtn.style.display = "none";
+        scoreEl.textContent = `Final Score: ${score}/${quizData.length}`;
+      }
+    });
+
+    // Load first question
+    loadQuestion();
+  </script>
+</body>
+</html>
